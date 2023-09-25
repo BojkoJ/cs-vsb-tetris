@@ -7,9 +7,11 @@
             //MultidimensionalArray v1 = new MultidimensionalArray();
             //v1.Run();
 
-            JaggedArray v2 = new JaggedArray();
-            v2.Run();
+            //JaggedArray v2 = new JaggedArray();
+            //v2.Run();
 
+            StructureArray v3 = new StructureArray();
+            v3.Run();
 
             Console.ReadKey();
         }
