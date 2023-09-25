@@ -15,11 +15,14 @@ namespace Tetris2
             T(2, 2, data);
             Z(5, 7, data);
 
-            shi
+            while(true)
+            {
+                MainLoop(data);
+                Thread.Sleep(1000);
 
-            MainLoop(data);
+            }
 
-            Console.WriteLine();
+
         }
 
         public void T(int x, int y, bool[,] data)
@@ -44,6 +47,19 @@ namespace Tetris2
 
         public void MainLoop(bool[,] data)
         {
+
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Clear();
+
+            //nyní je třeba posunout kostičky dolů - projít to vícerozměrné pole data a posunout to o 1 níž
+
+            for (int i = data.GetLength(1) - 1; i > 0; i--)
+            {
+                for (int j = 0; j < data.GetLength(0); j++)
+                {
+                    data[j, i] = data[j, i - 1];
+                }
+            }
 
             Console.BackgroundColor = ConsoleColor.Green;
             Console.ForegroundColor = ConsoleColor.Blue;
